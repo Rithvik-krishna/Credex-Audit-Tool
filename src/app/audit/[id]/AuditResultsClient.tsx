@@ -315,13 +315,13 @@ export default function AuditResultsClient({
               </div>
 
               <a
-                href="https://calendly.com/credex-savings-audit/15min"
+                href="https://credex.rocks"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all shadow-xl shadow-emerald-500/20 active:scale-[0.99] text-sm w-full md:w-auto"
               >
                 <Calendar className="h-4.5 w-4.5" />
-                Book Savings Consultation
+                Request Enterprise Savings Review
               </a>
             </div>
           </div>
