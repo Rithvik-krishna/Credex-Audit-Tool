@@ -1,5 +1,10 @@
 # Credex AI Spend Audit Tool
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-credex--audit--tool--psi.vercel.app-6366f1?style=for-the-badge&logo=vercel&logoColor=white)](https://credex-audit-tool-psi.vercel.app/)
+[![CI](https://github.com/Rithvik-krishna/Credex-Audit-Tool/actions/workflows/ci.yml/badge.svg)](https://github.com/Rithvik-krishna/Credex-Audit-Tool/actions/workflows/ci.yml)
+
+**🌐 Live App:** https://credex-audit-tool-psi.vercel.app/
+
 An elegant, high-converting, no-login web application that allows startups to audit their AI subscription spending in 30 seconds. This tool acts as an automated lead-generation funnel for **[Credex](https://credex.ai)**, which sells discounted institutional AI credits in bulk.
 
 ---
@@ -48,7 +53,7 @@ The application implements a custom-tailored dark-mode theme based on dynamic HS
    RESEND_FROM_EMAIL=noreply@your-vercel-domain.com
 
    # Dynamic Routing Root URL
-   NEXT_PUBLIC_BASE_URL=http://localhost:3000
+   NEXT_PUBLIC_BASE_URL=https://credex-audit-tool-psi.vercel.app
    ```
 3. Run the Next.js development server:
    ```bash
@@ -66,8 +71,20 @@ The application implements a custom-tailored dark-mode theme based on dynamic HS
 The project features a **Vitest** test suite verifying all core optimization scenarios:
 
 ```bash
-# Run tests in non-interactive single-pass mode
+# Run all tests once (ideal for CI pipelines)
 npm run test
 ```
 
-For more details on automated validation, please refer to [TESTS.md](file:///c:/Users/Hp/Desktop/AI%20Spend%20Audit%20Tool/TESTS.md).
+For more details on automated validation, please refer to [TESTS.md](TESTS.md).
+
+---
+
+## 🌐 Production Deployment
+
+The app is deployed and publicly accessible at:
+
+**https://credex-audit-tool-psi.vercel.app/**
+
+Deployed via [Vercel](https://vercel.com). The CI/CD pipeline automatically runs lint, tests, and build on every push to `main` via GitHub Actions (`.github/workflows/ci.yml`).
+
+> **Important:** Ensure `NEXT_PUBLIC_BASE_URL` is set to your Vercel domain in the Vercel dashboard under **Settings → Environment Variables** so that generated audit share URLs resolve correctly.
