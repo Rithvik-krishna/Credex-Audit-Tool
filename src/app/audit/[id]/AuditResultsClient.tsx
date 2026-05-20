@@ -214,13 +214,16 @@ export default function AuditResultsClient({
                 className="hidden" 
                 tabIndex={-1} 
                 autoComplete="off" 
+                aria-hidden="true"
               />
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 {/* Email Address */}
                 <div className="relative md:col-span-2">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500"><Mail className="h-4 w-4" /></span>
+                  <label htmlFor="email-input" className="sr-only">Work Email Address</label>
                   <input
+                    id="email-input"
                     type="email"
                     required
                     placeholder="Work Email address (e.g. founder@mycompany.com)"
@@ -231,30 +234,38 @@ export default function AuditResultsClient({
                 </div>
 
                 {/* Company Name */}
-                <input
-                  type="text"
-                  placeholder="Company Name (optional)"
-                  value={companyName}
-                  onChange={(e) => setCompanyName(e.target.value)}
-                  className="w-full bg-zinc-950 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 text-zinc-300 font-semibold"
-                />
+                <div className="w-full">
+                  <label htmlFor="company-name-input" className="sr-only">Company Name (optional)</label>
+                  <input
+                    id="company-name-input"
+                    type="text"
+                    placeholder="Company Name (optional)"
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
+                    className="w-full bg-zinc-950 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 text-zinc-300 font-semibold"
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 items-center pt-2">
                 {/* Role select */}
-                <select
-                  value={role}
-                  onChange={(e) => setRole(e.target.value)}
-                  className="w-full sm:w-64 bg-zinc-950 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 text-zinc-400 font-medium"
-                >
-                  <option value="">Your Role / Title (optional)</option>
-                  <option value="Founder">Founder / CEO</option>
-                  <option value="CTO">CTO / VP Engineering</option>
-                  <option value="Lead Engineer">Lead Engineer</option>
-                  <option value="Finance Manager">Finance Manager / CFO</option>
-                  <option value="Product Manager">Product Manager</option>
-                  <option value="Other">Other</option>
-                </select>
+                <div className="w-full sm:w-64 relative">
+                  <label htmlFor="role-select" className="sr-only">Your Role (optional)</label>
+                  <select
+                    id="role-select"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    className="w-full bg-zinc-950 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 text-zinc-400 font-medium appearance-none"
+                  >
+                    <option value="">Your Role / Title (optional)</option>
+                    <option value="Founder">Founder / CEO</option>
+                    <option value="CTO">CTO / VP Engineering</option>
+                    <option value="Lead Engineer">Lead Engineer</option>
+                    <option value="Finance Manager">Finance Manager / CFO</option>
+                    <option value="Product Manager">Product Manager</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
 
                 <button
                   type="submit"
