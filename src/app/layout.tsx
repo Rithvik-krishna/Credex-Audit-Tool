@@ -16,6 +16,14 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Credex AI Spend Audit — Optimize Your AI Spend Stack",
   description: "Free 30-second financial audit to optimize your startup's AI stack subscriptions (Cursor, Copilot, Claude, ChatGPT, Gemini, v0, APIs). Identify redundancy and claim high-volume API credits.",
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon.png' },
+    ],
+  },
 };
 
 export default function RootLayout({
